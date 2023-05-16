@@ -1,18 +1,18 @@
 .app {
 	position: relative;
+	display: flex;
 	width: 100vw;
 	height: 100vh;
-	padding-left: 200px;
 	overflow-x: hidden;
 	overflow-y: hidden;
 	.sidebar {
-		position: absolute;
-		top: 0;
-		left: 0;
-		z-index: 1;
-		width: 200px;
+		width: 60px;
 		height: 100%;
 		border-right: 1px solid #eee;
+		transition: all .3s;
+		&.expand {
+			width: 200px;
+		}
 	}
 	.main {
 		position: relative;
