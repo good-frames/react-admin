@@ -1,4 +1,6 @@
 import { useContext } from 'react';
+import { Button } from 'antd';
+import { MenuFoldOutlined } from '@ant-design/icons';
 
 import { LayoutContext } from '../layoutContext';
 
@@ -8,7 +10,8 @@ const Nav = () => {
   return (
     <div>
       <span>nav</span>
-      <div onClick={toggleExpandSidebar}>点我</div>
+
+      <Button type="primary" shape="circle" icon={<MenuFoldOutlined />} onClick={toggleExpandSidebar} />
     </div>
   );
 };

@@ -46,8 +46,8 @@ const rotuerViews = (routerItems: CustomRoute[]) => {
 };
 
 export default () => {
-  const location = useLocation();
-  const navigate = useNavigate();
+  // const location = useLocation();
+  // const navigate = useNavigate();
 
   // useEffect(() => {
   //   if (location.pathname === '/home') {
