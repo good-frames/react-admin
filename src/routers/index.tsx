@@ -1,5 +1,5 @@
-import { Suspense } from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Suspense, useEffect } from 'react';
+import { Navigate, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 
 import { CustomRoute, routes } from './routes';
 
@@ -45,4 +45,15 @@ const rotuerViews = (routerItems: CustomRoute[]) => {
   );
 };
 
-export default () => <Routes>{rotuerViews(routes)}</Routes>;
+export default () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // useEffect(() => {
+  //   if (location.pathname === '/home') {
+  //     navigate('/login');
+  //   }
+  // }, [location]);
+  
+  return <Routes>{rotuerViews(routes)}</Routes>;
+};

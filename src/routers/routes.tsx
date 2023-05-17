@@ -27,5 +27,9 @@ export const routes: CustomRoute[] = [
         meta: { title: '主体查询', icon: 'body' }
       }
     ]
+  },
+  {
+    path: '/login',
+    component: lazy(() => import('@/pages/login'))
   }
 ];
