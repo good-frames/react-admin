@@ -37,8 +37,8 @@ const Layout = () => {
         <div className={`${styles.sidebar} ${layoutOptions.expandSidebar ? styles.expand : ''}`}>
           <span>bar</span>
         </div>
-        <div className={styles.main}>
-          <div className="nav">
+        <div className={styles.right}>
+          <div className={styles.nav}>
             <Nav></Nav>
           </div>
           <Outlet />
