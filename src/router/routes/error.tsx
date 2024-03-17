@@ -1,6 +1,6 @@
-import Page403 from '@/pages/error/403';
-import Page404 from '@/pages/error/404';
-import Page500 from '@/pages/error/500';
+import Page403 from '@/pages/sys/error/403';
+import Page404 from '@/pages/sys/error/404';
+import Page500 from '@/pages/sys/error/500';
 
 export default [
   {

@@ -1,11 +1,10 @@
 import { useMemo } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, useMatches } from 'react-router-dom';
 
 export function useRouter() {
   const navigate = useNavigate();
   const location = useLocation();
-
-  console.log('location',location);
+  const matches = useMatches();
 
   const router = useMemo(
     () => ({
@@ -20,6 +19,7 @@ export function useRouter() {
 
   return {
     router,
-    location
+    location,
+    matches
   };
 }

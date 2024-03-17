@@ -1,9 +1,10 @@
 import { Outlet } from 'react-router-dom';
 import { useImmerReducer } from 'use-immer';
-import { Layout, Menu } from 'antd';
+import { Layout } from 'antd';
 
 import { LayoutOptions, LayoutAction, defaultOptions, LayoutContext } from './layoutContext';
 import Nav from './Nav';
+import Menu from './Menu';
 
 import styles from './index.module.less';
 import Logo from '@/assets/images/logo.jpg';
@@ -48,28 +49,7 @@ const DashboardLayout = () => {
           <div className={styles.logo}>
             <img src={Logo}/>
           </div>
-          <Menu
-            theme="dark"
-            mode="inline"
-            defaultSelectedKeys={['1']}
-            items={[
-              {
-                key: '1',
-                // icon: <UserOutlined />,
-                label: 'nav 1',
-              },
-              {
-                key: '2',
-                // icon: <VideoCameraOutlined />,
-                label: 'nav 2',
-              },
-              {
-                key: '3',
-                // icon: <UploadOutlined />,
-                label: 'nav 3',
-              },
-            ]}
-          />
+          <Menu></Menu>
         </Sider>
         <Layout>
           <Header className={styles.header}>

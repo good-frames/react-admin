@@ -7,7 +7,7 @@ import errorRoutes from './routes/error';
 
 import AuthGuard from './authGuard';
 import Layout from '@/layout/index';
-const Login = lazy(() => import('@/pages/login'));
+const Login = lazy(() => import('@/pages/sys/login'));
 
 const LoginRoute = {
   path: '/login',

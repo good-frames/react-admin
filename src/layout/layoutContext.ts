@@ -15,7 +15,7 @@ export interface LayoutContextValue {
 }
 
 export const defaultOptions: LayoutOptions = {
-  expandSidebar: true
+  expandSidebar: false
 };
 
 export const LayoutContext = createContext<LayoutContextValue>({

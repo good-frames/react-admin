@@ -1,6 +1,6 @@
 import react from '@vitejs/plugin-react';
-// import createSvgIcon from './svg-icon';
-// import createMockServer from './mock-server';
+import createSvgIcon from './svg-icon';
+import createMockServer from './mock-server';
 
 /**
  * 创建插件
@@ -9,11 +9,10 @@ import react from '@vitejs/plugin-react';
  * @returns plugins
  */
 export default function createVitePlugins(env: string, command: string) {
-	const isBuild = command === 'build'; // 是否为大包模式
-	const vitePlugins = [
-		react(),
-		// createSvgIcon(isBuild),
-		// createMockServer(isBuild)
-	];
-	return vitePlugins;
+  const vitePlugins = [
+    react(),
+    createSvgIcon(command),
+    createMockServer(command)
+  ];
+  return vitePlugins;
 }
