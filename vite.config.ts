@@ -20,9 +20,12 @@ export default defineConfig(({ mode, command }) => {
       extensions: ['.js', '.ts', '.jsx', '.tsx', '.json']
     },
     server: {
-      host: true,
+      host: 'localhost',
       port: 80,
-      open: true
+      open: true,
+      hmr: {
+        overlay: false
+      },
     },
   };
 });

@@ -20,7 +20,10 @@ const PrivateRoute = ({children}: Props) => {
       } else {
         router.replace('/login');
       }
+      return;
     }
+
+    
   }, [router]);
 
   useEffect(() => {

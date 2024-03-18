@@ -95,7 +95,7 @@ class Http {
     });
   }
 
-  post<T>(config: RequestConfig): Promise<T> {
+  post<T>(config?: RequestConfig): Promise<T> {
     return this.request({
       ...config,
       method: 'POST'
@@ -109,7 +109,7 @@ class Http {
     });
   }
 
-  delete<T>(config: RequestConfig): Promise<T> {
+  delete<T>(confi: RequestConfig): Promise<T> {
     return this.request({
       ...config,
       method: 'DELETE'
