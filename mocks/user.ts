@@ -43,45 +43,46 @@ export default [
         data: [
           {
             key: '/home',
-            icon: 'home',
+            icon: 'react',
             label: 'home-1',
             children: [
               {
                 key: '/home/subhome1',
-                icon: 'home1-1',
+                icon: 'react',
                 label: 'subhome1-1'
               },
               {
                 key: '/home/subhome2',
-                icon: 'home1-2',
+                icon: 'react',
                 label: 'subhome1-2'
               },
             ]
           },
           {
             key: '/home2',
-            icon: 'home',
+            icon: 'react',
             label: 'home-2',
             children: [
               {
                 key: '/home2/subhome21',
-                icon: 'home2-1',
+                icon: 'react',
                 label: 'subhome2-1'
               },
               {
                 key: '/home2/subhome22',
-                icon: 'home2-2',
+                icon: 'react',
                 label: 'subhome2-2'
               },
             ]
           },
           {
             key: '/test',
-            icon: 'test',
+            icon: 'react',
             label: 'test'
           },
           {
             key: 'http://www.baidu.com',
+            icon: 'react',
             label: '百度外部链接'
           }
         ]

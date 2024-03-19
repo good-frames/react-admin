@@ -6,6 +6,9 @@ import { useRouter } from '@/hooks';
 
 import useSysStore, { getUserMenus } from '@/store/sysStore';
 import MenuItem from 'antd/es/menu/MenuItem';
+import SvgIcon from '@/components/SvgIcon';
+
+import styles from '../styles/menus.module.less';
 
 type MenuItem = {
   key: string;
@@ -18,6 +21,7 @@ function getItem(item: MenuItem) {
   return {
     key: item.key,
     label: item.label,
+    icon: item.icon ? <SvgIcon name={item.icon} className={styles['menu-icon']}></SvgIcon> : '',
     children: item.children,
   };
 }
