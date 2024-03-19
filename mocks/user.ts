@@ -33,4 +33,59 @@ export default [
       };
     }
   },
+  {
+    url: '/dev-api/mock/menus',
+    method: 'get',
+    timeout: TIMEOUT,
+    response: () => {
+      return {
+        code: 200,
+        data: [
+          {
+            key: '/home',
+            icon: 'home',
+            label: 'home-1',
+            children: [
+              {
+                key: '/home/subhome1',
+                icon: 'home1-1',
+                label: 'subhome1-1'
+              },
+              {
+                key: '/home/subhome2',
+                icon: 'home1-2',
+                label: 'subhome1-2'
+              },
+            ]
+          },
+          {
+            key: '/home2',
+            icon: 'home',
+            label: 'home-2',
+            children: [
+              {
+                key: '/home2/subhome21',
+                icon: 'home2-1',
+                label: 'subhome2-1'
+              },
+              {
+                key: '/home2/subhome22',
+                icon: 'home2-2',
+                label: 'subhome2-2'
+              },
+            ]
+          },
+          {
+            key: '/test',
+            icon: 'test',
+            label: 'test'
+          },
+          {
+            key: 'http://www.baidu.com',
+            label: '百度外部链接'
+          }
+        ]
+      };
+    }
+  },
 ];

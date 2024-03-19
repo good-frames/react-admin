@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
 import * as api from '@/api/sys/user';
+import { immer } from 'zustand/middleware/immer';
 
 type UserStore = {
   accessToken: string;
@@ -10,25 +11,29 @@ type UserStore = {
   setUserInfo: (userInfo: api.UserInfo) => void;
 }
 
-const useUserStore = create(persist<UserStore>(
-  (set) => ({
-    accessToken: '',
-    userInfo: {},
-    setAccessToken: (token: string) => {
-      set({
-        accessToken: token
-      });
-    },
-    setUserInfo: (userInfo: api.UserInfo) => {
-      set({
-        userInfo
-      });
-    }
-  }),
-  {
-    name: 'user'
-  }
-));
+const useUserStore = create<UserStore>()(
+  immer(
+    persist(
+      (set) => ({
+        accessToken: '',
+        userInfo: {},
+        setAccessToken: (token: string) => {
+          set(state => state.accessToken = token);
+        },
+        setUserInfo: (userInfo: api.UserInfo) => {
+          set(state => state.userInfo = userInfo);
+        }
+      }),
+      {
+        name: 'user',
+        partialize: (state) =>
+          Object.fromEntries(
+            Object.entries(state).filter(([key]) => !['userInfo'].includes(key)),
+          ),
+      }
+    )
+  )
+);
 
 // 用户登录
 export const login = async () => {
@@ -46,6 +51,8 @@ export const getUserInfo = async () => {
   const userinfo = await api.getUserInfo();
 
   setUserInfo(userinfo);
+
+  return userinfo;
 };
 
 export default useUserStore;

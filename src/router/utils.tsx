@@ -1,8 +1,5 @@
 import { ReactNode, Suspense } from 'react';
-
-const Loading = () => {
-  return <div>loading...</div>;
-};
+import Loading from './loading';
 
 export function lazyLoad(children: ReactNode): ReactNode {
   return (
