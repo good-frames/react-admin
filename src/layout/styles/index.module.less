@@ -17,7 +17,29 @@
 	}
 
 	.header {
+		position: sticky;
+		top: 0;
+		z-index: 1;
 		padding-inline: 20px;
 		background: #fff;
+		box-shadow: 0 0 5px 0 rgba(0,0,0,.1);
 	}
+}
+
+
+.fade-enter{
+	opacity: 0;
+}
+.fade-exit{
+	opacity: 1;
+}
+.fade-enter-active{
+	opacity: 1;
+}
+.fade-exit-active{
+	opacity: 0;
+}
+.fade-enter-active,
+.fade-exit-active{
+	transition: opacity 200ms;
 }

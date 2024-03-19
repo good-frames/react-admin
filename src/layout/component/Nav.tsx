@@ -3,7 +3,7 @@ import { Button } from 'antd';
 import { MenuFoldOutlined } from '@ant-design/icons';
 
 import { LayoutContext } from '../layoutContext';
-import styles from './index.module.less';
+import styles from '../styles/nav.module.less';
 
 const Nav = () => {
   const { options, toggleExpandSidebar } = useContext(LayoutContext);

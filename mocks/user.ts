@@ -1,7 +1,7 @@
 // import Mock from 'mockjs';
 
 // 接口延迟
-const TIMEOUT = 2000;
+const TIMEOUT = [100, 500];
 
 export default [
   {

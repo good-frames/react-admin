@@ -1,12 +1,12 @@
-import { Outlet } from 'react-router-dom';
 import { useImmerReducer } from 'use-immer';
 import { Layout } from 'antd';
-
 import { LayoutOptions, LayoutAction, defaultOptions, LayoutContext } from './layoutContext';
-import Nav from './Nav';
-import Menu from './Menu';
 
-import styles from './index.module.less';
+import Nav from './component/Nav';
+import Menus from './component/Menus';
+import Main from './component/Main';
+
+import styles from './styles/index.module.less';
 import Logo from '@/assets/images/logo.jpg';
 
 const { Header, Sider, Content } = Layout;
@@ -49,14 +49,14 @@ const DashboardLayout = () => {
           <div className={styles.logo}>
             <img src={Logo}/>
           </div>
-          <Menu></Menu>
+          <Menus></Menus>
         </Sider>
         <Layout>
           <Header className={styles.header}>
             <Nav></Nav>
           </Header>
           <Content>
-            <Outlet></Outlet>
+            <Main></Main>
           </Content>
         </Layout>
       </Layout>
