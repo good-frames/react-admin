@@ -1,0 +1,33 @@
+@import '@/assets/styles/function.scss';
+
+.nav {
+  @include flex($jc: space-between);
+  height: 100%;
+
+  &__left {
+    @include flex();
+
+    .breadcrumb {
+      margin-left: 20px;
+    }
+  }
+
+  &__right {
+    @include flex();
+
+    .user {
+      @include flex();
+
+      &-nickname {
+        font-size: 14px;
+      }
+
+      &-avatar {
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+        border-radius: 30px;
+      }
+    }
+  }
+}

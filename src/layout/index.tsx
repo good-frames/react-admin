@@ -6,7 +6,7 @@ import Nav from './component/Nav';
 import Menus from './component/Menus';
 import Main from './component/Main';
 
-import styles from './styles/index.module.less';
+import styles from './styles/index.module.scss';
 import Logo from '@/assets/images/logo.jpg';
 
 const { Header, Sider, Content } = Layout;
@@ -30,7 +30,7 @@ const layoutReducer = (state: LayoutOptions, action: LayoutAction) => {
 
 const DashboardLayout = () => {
   const [ layoutOptions, layoutDispatch ] = useImmerReducer(layoutReducer, defaultOptions);
-
+  
   const toggleExpandSidebar = () => {
     console.log('toggleExpandSidebar');
     layoutDispatch({ type: 'toggleExpand' });

@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom/client';
 // 注入svg图标
 import 'virtual:svg-icons-register';
 import App from './App';
-import '@/assets/styles/index.less';
+import '@/assets/styles/index.scss';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <App></App>

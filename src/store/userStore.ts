@@ -18,10 +18,10 @@ const useUserStore = create<UserStore>()(
         accessToken: '',
         userInfo: {},
         setAccessToken: (token: string) => {
-          set(state => state.accessToken = token);
+          set(state => {state.accessToken = token;});
         },
         setUserInfo: (userInfo: api.UserInfo) => {
-          set(state => state.userInfo = userInfo);
+          set(state => {state.userInfo = userInfo;});
         }
       }),
       {

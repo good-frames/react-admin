@@ -1,6 +1,6 @@
 import { SwitchTransition, CSSTransition } from 'react-transition-group';
 
-import styles from '../styles/main.module.less';
+import styles from '../styles/main.module.scss';
 import { useRouter } from '@/hooks';
 import { useOutlet } from 'react-router-dom';
 
