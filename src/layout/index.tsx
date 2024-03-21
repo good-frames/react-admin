@@ -5,6 +5,7 @@ import { LayoutOptions, LayoutAction, defaultOptions, LayoutContext } from './la
 import Nav from './component/Nav';
 import Menus from './component/Menus';
 import Main from './component/Main';
+import NavTabs from './component/NavTabs';
 
 import styles from './styles/index.module.scss';
 import Logo from '@/assets/images/logo.jpg';
@@ -55,7 +56,8 @@ const DashboardLayout = () => {
           <Header className={styles.header}>
             <Nav></Nav>
           </Header>
-          <Content>
+          <Content className={styles.content}>
+            {/* <NavTabs></NavTabs> */}
             <Main></Main>
           </Content>
         </Layout>

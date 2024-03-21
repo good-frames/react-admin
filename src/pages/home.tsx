@@ -1,4 +1,11 @@
+import { useEffect } from 'react';
+
 const Home = () => {
+  useEffect(() => {
+    console.log('home');
+  }, []);
+
+
   return (
     <>
       <div style={{background: 'green'}}>home</div>
