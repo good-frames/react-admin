@@ -4,6 +4,9 @@
   overflow-y: auto;
 
   &-content {
+    position: relative;
+    min-width: 100%;
+    min-height: 100%;
     padding: 20px;
     border-radius: 10px;
     background: #fff;

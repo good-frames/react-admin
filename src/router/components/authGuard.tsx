@@ -1,8 +1,7 @@
-import { Suspense, useCallback, useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { isEmpty } from 'lodash';
 import { useRouter } from '@/hooks';
 import useUserStore, { getUserInfo } from '@/store/userStore';
-import Loading from './loading';
 
 type Props = {
   children: React.ReactNode;
@@ -24,14 +23,20 @@ const PrivateRoute = ({children}: Props) => {
       } else {
         router.replace('/login');
       }
-      return;
+      // return;
+    }
+    
+    console.log(location);
+    if (location.pathname === '/login') {
+      router.replace('/');
+      // return;
     }
 
     if (isEmpty(userInfo)) {
       try {
         await getUserInfo();
       } catch (e) {
-        return;
+        // return;
       }
     }  
   }, [router]);
@@ -41,10 +46,8 @@ const PrivateRoute = ({children}: Props) => {
   }, [check]);
   
   return (
-    <Suspense fallback={<Loading/>}>
-      {children}
-    </Suspense>
-  ); 
+    <>{children}</>
+  );
 };
 
 export default PrivateRoute;

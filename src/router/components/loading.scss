@@ -1,0 +1,10 @@
+@import '@/assets/styles/function.scss';
+
+.base-router-loading {
+  @include flex($direction: column, $jc: center, $ai: center);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

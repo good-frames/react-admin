@@ -1,17 +1,16 @@
 import { lazy } from 'react';
 import { Navigate, RouteObject, RouterProvider, createHashRouter } from 'react-router-dom';
-import { lazyLoad } from '@/router/utils';
 
 import permissionRoutes from './routes/permission';
 import errorRoutes from './routes/error';
 
-import AuthGuard from './authGuard';
+import AuthGuard from './components/authGuard';
 import Layout from '@/layout/index';
 const Login = lazy(() => import('@/pages/sys/login'));
 
 const LoginRoute = {
   path: '/login',
-  element: lazyLoad(<Login/>)
+  element: (<AuthGuard><Login/></AuthGuard>)
 };
 
 const PAGE_NOT_FOUND_ROUTE = {
